@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+
+{% block title %}Student Form{% endblock %}
+
+{% block content %}
+  <form action="{% url 'student' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="registration">Registration</label>
+      <input type="number" name="registration" class="form-control" id="registration">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" class="form-control" id="name">
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+{% endblock %}

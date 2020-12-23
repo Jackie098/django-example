@@ -1,16 +1,29 @@
 from django.shortcuts import render
+from .models import Student
+
 
 # Create your views here.
 def home(request):
   return render(request, 'myapp/home.html')
 
-def sum(request):
-  return render(request, 'myapp/sum.html')
+def student_form(request):
+  return render(request, 'myapp/student_form.html')
 
-def toSum(request):
-  x = int(request.POST['x'])
-  y = int(request.POST['y'])
+def student(request):
+  registration = request.POST['registration']
+  name = request.POST['name']
 
-  context = {'result': x + y}
+  student = Student(registration, name)
+  context = {'student': student}
 
-  return render(request, 'myapp/sum_result.html', context=context)
+  return render(request, 'myapp/student.html', context=context)
+
+def students(request):
+  student1 = Student('111', 'Carlos')
+  student2 = Student('222', 'Ruam')
+  student3 = Student('333', 'Caki')
+
+  students = [student1, student2, student3]
+  context = {'students': students}
+
+  return render(request, 'myapp/list_students.html', context=context)
