@@ -12,16 +12,20 @@ def student_form(request):
 def student(request):
   registration = request.POST['registration']
   name = request.POST['name']
+  scholarship = False
 
-  student = Student(registration, name)
+  if 'scholarship' in request.POST:
+    scholarship = True
+
+  student = Student(registration, name, scholarship)
   context = {'student': student}
 
   return render(request, 'myapp/student.html', context=context)
 
 def students(request):
-  student1 = Student('111', 'Carlos')
-  student2 = Student('222', 'Ruam')
-  student3 = Student('333', 'Caki')
+  student1 = Student('111', 'Carlos', True)
+  student2 = Student('222', 'Ruam', False)
+  student3 = Student('333', 'Caki', False)
 
   students = [student1, student2, student3]
   context = {'students': students}

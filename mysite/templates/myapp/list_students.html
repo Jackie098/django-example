@@ -3,7 +3,21 @@
 {% block title %}Student List{% endblock %}
 
 {% block content %}
-   {% for student in students %}
-      <li>{{ student.registration }}, {{ student.name }}</li>
-   {% endfor %}
+  <h3>Bolsistas:</h3>
+  <ul>
+    {% for student in students %}
+      {% if student.scholarship %}
+        <li>{{ student.registration }}, {{ student.name }}, {{ student.scholarship }}</li>
+      {% endif%} 
+    {% endfor %}
+  </ul>
+  <hr>
+  <h3>Não bolsistas:</h3>
+  <ul>
+    {% for student in students %}
+      {% if not student.scholarship %}
+        <li>{{ student.registration }}, {{ student.name }}, {{ student.scholarship }}</li>
+      {% endif%} 
+    {% endfor %}
+  </ul>
 {% endblock %}

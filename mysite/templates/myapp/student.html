@@ -3,7 +3,9 @@
 {% block title %}Student{% endblock %}
 
 {% block content %}
-  <p>
-    {{student.registration}}, {{student.name}}
-  </p>
+  <ul>
+    <li>
+      {{student.registration}}, {{student.name}}, {{ student.scholarship }}
+    </li>
+  </ul>
 {% endblock %}
