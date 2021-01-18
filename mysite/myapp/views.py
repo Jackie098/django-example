@@ -17,7 +17,9 @@ def student(request):
   if 'scholarship' in request.POST:
     scholarship = True
 
-  student = Student(registration, name, scholarship)
+  student = Student(registration=registration, name=name, scholarship=scholarship)
+  student.save()
+  
   context = {'student': student}
 
   return render(request, 'myapp/student.html', context=context)
