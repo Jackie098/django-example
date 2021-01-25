@@ -25,11 +25,20 @@ def student(request):
   return render(request, 'myapp/student.html', context=context)
 
 def students(request):
-  student1 = Student('111', 'Carlos', True)
-  student2 = Student('222', 'Ruam', False)
-  student3 = Student('333', 'Caki', False)
+  students = Student.objects.all()
 
-  students = [student1, student2, student3]
+  # students = [student1, student2, student3]
   context = {'students': students}
 
   return render(request, 'myapp/list_students.html', context=context)
+
+def find_student(request):
+  return render(request, 'myapp/student_find.html')
+
+def read_student(request):
+  id = request.POST['id']
+
+  student = Student.objects.get(pk=id)
+
+  print(student)
+  return render(request, 'myapp/home.html')
