@@ -20,7 +20,7 @@
 <body>
   
   <div class="container h-100">
-    <div class="row h-100 align-items-center">
+    <div class="row align-items-center my-4">
       <div class="col-6 mx-auto">
         <form action="{% url 'register' %}" method="POST">
           
@@ -49,6 +49,17 @@
           <button type="submit" class="btn btn-success btn-block">Register</button>
         </form>
       </div>
+    </div>
+    <div class="row align-items-center">
+      {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+              <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                {{ message }}
+              </li>
+            {% endfor %}
+        </ul>
+      {% endif %}
     </div>
   </div>
 
