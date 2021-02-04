@@ -26,17 +26,31 @@
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'student_form' %}">Register<span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'student_form' %}">Registrar aluno<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'students' %}">List</a>
+            <a class="nav-link" href="{% url 'students' %}">Listar</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-          <span>
-            <a href="{% url 'signup' %}" class="btn btn-outline-success mr-2">Entrar</a>
-          </span>
+          {% if user.is_authenticated %}
+            <span class="btn btn-outline-warning text-white mr-2" align="center">
+              {{ user.username }}
+            </span>
+            <span>
+              <a href="{% url 'logout' %}" class="btn btn-danger mr-2">Sair</a>
+            </span>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}" class="text-white mr-2 my-auto">Registrar</a>
+            </li>
+            <li>
+              <span>
+                <a href="{% url 'login_form' %}" class="btn btn-outline-success mr-2">Entrar</a>
+              </span>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </div>
