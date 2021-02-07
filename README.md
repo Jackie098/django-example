@@ -1,4 +1,4 @@
- ## Login e postagem de alunos
+ ## Login e Postagem de alunos
  
 Aprendendo a utilizar o framework web Django. Foi-se utilizado de técnicas, como:
   * Classes (OO)
@@ -32,7 +32,20 @@ Tecnologias utilizadas no projeto.
 * Github
  
 ## Pip
- Você vai precisar de algumas libs para rodar o projeto. Os requerimentos estarão no arquivo [requeriments.txt]()
+ Você vai precisar de algumas libs para rodar o projeto. Os requerimentos estarão no arquivo [requeriments.txt](https://github.com/Jackie098/django-example/blob/master/requeriments.txt).
+
+ Para instalar os requerimentos, basta rodar no terminal:
+ > pip install requeriments.txt
+  
+  ATENÇÃO: Considere estar na mesma pasta do 'requeriments.txt'.
+
+  Se você usa ambiente virtual (o recomendado):
+  1. Instale o ambiente virtual:
+    > python3 -m venv myvenv
+  2. Inicie o ambiente. Se atente em colocar o caminho correto do arquivo:
+    > source ./myvenv/bin/activate
+  3. Depois de clonar o repositório, instale as dependências com o arquivo 'requeriments.txt':
+    > pip install requeriments.txt
  
 ## Getting started
  
