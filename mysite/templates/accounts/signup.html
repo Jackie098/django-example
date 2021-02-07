@@ -4,56 +4,63 @@
   
 {% block content %}
   <div class="container h-100">
-    <div class="row align-items-center my-4">
-      <div class="col-6 mx-auto">
+    <div class="my-4">
+      <div class="mx-auto">
         <form action="{% url 'register' %}" method="POST">
           
           {% csrf_token %}
+          <div class="row">
+            <div class="form-group col-6" name="for-username">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" name="username" id="username" placeholder="username">
+            </div>
+            
+            <div class="form-group col-6" name="for-registration">
+              <label for="registration">Registration</label>
+              <input type="number" name="registration" class="form-control" id="registration">
+            </div>
+          </div> 
 
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" id="username" placeholder="username">
+          <div class="row">
+            <div class="form-group col-6" name="for-email">
+              <label for="email">Email</label>
+              <input type="email"  class="form-control" name="email" id="email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="form-group col-6" name="for-name-student">
+              <label for="name">Name</label>
+              <input type="text" name="name" class="form-control" id="name">
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="form-group col-6" name="for-password">
+              <label for="password">Password</label>
+              <input type="password"  class="form-control" name="password" id="password">
+            </div>
+
+            <div class="form-group col-6" name="for-is-scholarship">
+              <p for="scholarship">It is scholarship?</p>
+              <input 
+                type="checkbox" 
+                name="scholarship" 
+                class="form-control col-sm-1" 
+                id="scholarship"
+                value="True">
+    
+                <label>Yes.</label>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email"  class="form-control" name="email" id="email">
+          <div class="row">
+            <div class="form-group col-6" name="for-repead-password">
+              <label for="password2">Repeat password</label>
+              <input type="password"  class="form-control" name="password2" id="password2">
+            </div>
           </div>
-
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password"  class="form-control" name="password" id="password">
-          </div>
-
-          <div class="form-group">
-            <label for="password2">Repeat password</label>
-            <input type="password"  class="form-control" name="password2" id="password2">
-          </div>
-
-          <div class="form-group ">
-            <label for="registration">Registration</label>
-            <input type="number" name="registration" class="form-control" id="registration">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" class="form-control" id="name">
-          </div>
-
-          <div class="form-group">
-            <label for="scholarship">It is scholarship?</label>
-            <input 
-              type="checkbox" 
-              name="scholarship" 
-              class="form-control col-sm-1" 
-              id="scholarship"
-              value="True">
-
-              <label>Yes.</label>
-          </div>
-
-          <button type="submit" class="btn btn-success btn-block">Register</button>
+          
+          <button type="submit" class="btn btn-success btn-block col-6" align="center">Register</button>
         </form>
       </div>
     </div>

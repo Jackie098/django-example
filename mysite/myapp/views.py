@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Student
+from django.shortcuts import render, redirect
+from .models import Student, Post
 
 
 # Create your views here.
@@ -36,12 +36,12 @@ def new_post_view(request):
   if request.method != 'POST':
     print('The method isnt POST')
 
-    return redirect('home')
+    return redirect('students')
   
-  if not request.user.is_authenticated():
+  if not request.user.is_authenticated:
     print('User isnt authenticated')
 
-    return redirect('signup')
+    return redirect('login_form')
   
   post_text = request.POST['post_text']
   user = request.user
