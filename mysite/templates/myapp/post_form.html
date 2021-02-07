@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+
+{% block title %}Student Form{% endblock %}
+
+{% block content %}
+  <form action="{% url 'new_post_view' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="post-text">Text of the post:</label>
+      <input type="text" name="post-text" id="post-text" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+{% endblock %}

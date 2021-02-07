@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
+from myapp.models import Student
 
 # Create your views here.
 def signup(request):
@@ -19,6 +20,12 @@ def register(request):
   email = request.POST['email']
   password = request.POST['password']
   password2 = request.POST['password2']
+  registration = request.POST['registration']
+  name = request.POST['name']
+  scholarship = False
+
+  if 'scholarship' in request.POST:
+    scholarship = True
 
   # Check if the PASSWORD's are iquals
   if password != password2:
@@ -40,6 +47,15 @@ def register(request):
 
   user = User.objects.create_user(username=username, email=email, password=password)
   user.save()
+
+  # Now, save the student in database
+  # Student inherits from user
+  Student.objects.create(
+    user = user,
+    registration = registration,
+    name = name,
+    scholarship = scholarship,
+  )
 
   print('usersaved = [username={}. email={}, password={}]'.format(username, email, password))  
     

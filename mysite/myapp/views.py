@@ -9,21 +9,6 @@ def home(request):
 def student_form(request):
   return render(request, 'myapp/student_form.html')
 
-def student(request):
-  registration = request.POST['registration']
-  name = request.POST['name']
-  scholarship = False
-
-  if 'scholarship' in request.POST:
-    scholarship = True
-
-  student = Student(registration=registration, name=name, scholarship=scholarship)
-  student.save()
-  
-  context = {'student': student}
-
-  return render(request, 'myapp/student.html', context=context)
-
 def students(request):
   students = Student.objects.all()
 
@@ -42,3 +27,28 @@ def read_student(request):
 
   print(student)
   return render(request, 'myapp/home.html')
+
+
+def new_post_form(request):
+  return render(request, 'myapp/post_form.html')
+
+def new_post_view(request):
+  if request.method != 'POST':
+    print('The method isnt POST')
+
+    return redirect('home')
+  
+  if not request.user.is_authenticated():
+    print('User isnt authenticated')
+
+    return redirect('signup')
+  
+  post_text = request.POST['post_text']
+  user = request.user
+  student = Student.objects.get(user=user)
+
+  post = Post(text=post_text, student=student)
+  post.save()
+
+  return redirect('home')
+  
