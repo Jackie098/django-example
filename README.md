@@ -57,13 +57,13 @@ Tecnologias utilizadas no projeto.
 ## Como usar
  
  Com o servidor rodando, crie uma conta através do link no *nav-bar* ao lado do botão verde de *login*.
- ![Cadastro de usuário](./images-readme/cadastro-usuario)
+ ![Cadastro de usuário](https://github.com/Jackie098/django-example/blob/master/images-readme/cadastro-usuario.png)
 
  Com uma conta já criada, faça *login*.
- ![Usuário logado](./images-readme/cadastro-usuario)
+ ![Usuário logado](https://github.com/Jackie098/django-example/blob/master/images-readme/usuario-logado.png)
 
  Após o *login*, observe que os botões ao canto superior direito mudaram e no canto superior esquerdo apareceu a opção de criar postagem.
- ![Cadastro de usuário](./images-readme/cadastro-usuario)
+ ![Cadastro de usuário](https://github.com/Jackie098/django-example/blob/master/images-readme/criando-postagem.png)
  
  
 ## Atualizações
