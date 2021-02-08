@@ -7,14 +7,14 @@ Aprendendo a utilizar o framework web Django. Foi-se utilizado de técnicas, com
   * Padrão MVC
   * Organização de arquivos estáticos
   * [Jinja Format](https://jinja.palletsprojects.com/en/2.11.x/templates/)
-  * Criação de usuário ADM
+  * Criação de usuário ADM para o Django
   * Criação de usuário com [biblioteca do Django](https://docs.djangoproject.com/en/3.1/ref/contrib/auth/)
   * Login e Log Out
   * Integração com BD relacional
   * CRUD
   * Migrations
   * Mensagens personalizadas (Erro, aviso, etc...)
-  * Tratamento de requisição
+  * Tratamento de requisições
  
  
 ## Tecnologias 
@@ -35,46 +35,51 @@ Tecnologias utilizadas no projeto.
  Você vai precisar de algumas libs para rodar o projeto. Os requerimentos estarão no arquivo [requeriments.txt](https://github.com/Jackie098/django-example/blob/master/requeriments.txt).
 
  Para instalar os requerimentos, basta rodar no terminal:
- > pip install requeriments.txt
+ > $ pip install requeriments.txt
   
   ATENÇÃO: Considere estar na mesma pasta do 'requeriments.txt'.
 
   Se você usa ambiente virtual (o recomendado):
   1. Instale o ambiente virtual:
-    > python3 -m venv myvenv
+  > $ python3 -m venv myvenv
   2. Inicie o ambiente. Se atente em colocar o caminho correto do arquivo:
-    > source ./myvenv/bin/activate
+  > $ source ./myvenv/bin/activate
   3. Depois de clonar o repositório, instale as dependências com o arquivo 'requeriments.txt':
-    > pip install requeriments.txt
+  > $ pip install requeriments.txt
  
-## Getting started
+## Começando
  
-* To install gems:
->    $ bundle install
-* To create the bank and do as migrations:
->    $ rake db:create db:migrate db:seed
-* To run the project:
->    $ rails s
- 
+* Considere os passos anteriores na sessão **PIP**. Em seguida:
+>    $ python manage.py runserver
+
+  Se estiver utilizando, certifique-se de estar com o ambiente virtual rodando e na mesma pasta do arquivo **manage.py**.
+
 ## Como usar
  
-Here will be the images and descriptions. Principal content.
+ Com o servidor rodando, crie uma conta através do link no *nav-bar* ao lado do botão verde de *login*.
+ ![Cadastro de usuário](./images-readme/cadastro-usuario)
+
+ Com uma conta já criada, faça *login*.
+ ![Usuário logado](./images-readme/cadastro-usuario)
+
+ Após o *login*, observe que os botões ao canto superior direito mudaram e no canto superior esquerdo apareceu a opção de criar postagem.
+ ![Cadastro de usuário](./images-readme/cadastro-usuario)
  
  
-## Features
+## Atualizações
  
-  - Here will be the features.
+  - Sugestões: 
+    - Pode-se exibir os posts de cada aluno (como um feed) na seção HOME
+    - Melhorar a classe POST: Atribuir outros tipos de campos
+    - Criar um APP e/ou classe para a interação de vários alunos no feed (como numa rede social)
  
  
 ## Links
  
-  - Link of deployed application: (if has been deployed)
-  - Repository: https://link_of_repository
-    - In case of sensitive bugs like security vulnerabilities, please contact
-      YOUR EMAIL directly instead of using issue tracker. We value your effort
-      to improve the security and privacy of this project!
+  - Repositório: https://github.com/Jackie098/django-example
+    - Em caso de dúvidas ou sugestões, sinta-se livre para entrar em contato e/ou solicitar **pull requests**.
  
  
 ## Autor
  
-* **CARLOS AUGUSTO M**: @Jackie098 (https://github.com/Jackie098)
+* **Carlos Augusto M**: @Jackie098 (https://github.com/Jackie098)
