@@ -1,2 +1,12 @@
+/myvenv
+
+/mysite/mysite/__pycache__/
+/mysite/myapp/__pycache__/
+/mysite/accounts/__pycache__/
+
+mysite/accounts/migrations/__pycache__/
+mysite/myapp/migrations/__pycache__/
+
 .vscode
-myvenv/
+
+mysite/db.sqlite3

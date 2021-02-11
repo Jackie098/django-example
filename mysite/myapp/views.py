@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+
 from .models import Student, Post
 
 
@@ -28,10 +30,11 @@ def read_student(request):
   print(student)
   return render(request, 'myapp/home.html')
 
-
+@login_required
 def new_post_form(request):
   return render(request, 'myapp/post_form.html')
 
+@login_required
 def new_post_view(request):
   if request.method != 'POST':
     print('The method isnt POST')
@@ -51,4 +54,14 @@ def new_post_view(request):
   post.save()
 
   return redirect('home')
-  
+
+@login_required
+def student_posts(request):
+  user = request.user
+  student = Student.objects.get(user=user)
+
+  posts = student.post_set.all()
+
+  context = {'posts': posts}
+
+  return render(request, 'myapp/my_posts.html', context=context)

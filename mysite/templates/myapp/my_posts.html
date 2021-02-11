@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+  
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.text }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ post.date }}</h6>
+      </div>
+    </div>
+    <br>
+
+  {% endfor %}
+{% endblock %}

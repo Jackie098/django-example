@@ -11,4 +11,5 @@ urlpatterns = [
 
     path('new_post_form/', views.new_post_form, name="new_post_form"),
     path('new_post_view/', views.new_post_view, name="new_post_view"),
+    path('my_posts', views.student_posts, name="my_posts"),
 ]

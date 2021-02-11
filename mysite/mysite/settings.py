@@ -134,3 +134,6 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'assets')
+
+# Configuring LOGIN URL default if the user doesn't logged
+LOGIN_URL = 'login_form'

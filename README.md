@@ -9,6 +9,7 @@ Aprendendo a utilizar o framework web Django. Foi-se utilizado de técnicas, com
   * [Jinja Format](https://jinja.palletsprojects.com/en/2.11.x/templates/)
   * Criação de usuário ADM para o Django
   * Criação de usuário com [biblioteca do Django](https://docs.djangoproject.com/en/3.1/ref/contrib/auth/)
+  * *Decorators*
   * Login e Log Out
   * Integração com BD relacional
   * CRUD
@@ -64,12 +65,14 @@ Tecnologias utilizadas no projeto.
 
  Após o *login*, observe que os botões ao canto superior direito mudaram e no canto superior esquerdo apareceu a opção de criar postagem.
  ![Cadastro de usuário](https://github.com/Jackie098/django-example/blob/master/images-readme/criando-postagem.png)
- 
+
+ *Foi adicionado mais um link para visualização das postagems*
  
 ## Atualizações
  
   - Sugestões: 
-    - Pode-se exibir os posts de cada aluno (como um feed) na seção HOME
+    - Adicionar funcionalidades na sessão HOME
+    - Pode-se exibir os posts de cada aluno (como um feed ou um fórum)
     - Melhorar a classe POST: Atribuir outros tipos de campos
     - Criar um APP e/ou classe para a interação de vários alunos no feed (como numa rede social)
  
